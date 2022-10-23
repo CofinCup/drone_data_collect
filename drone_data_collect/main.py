@@ -79,7 +79,7 @@ async def main() -> None:
     host.host_connect_drone(drone_config=config["drone"])
     host.host_start_logger(logger_config=config["logger"])
     for i in range(5):
-        await asyncio.gather(timer(1), drone_task_one_loop(host, config))
+        await asyncio.gather(timer(0.1), drone_task_one_loop(host, config))
         logger.info("finish one loop")
 
 
